@@ -27,6 +27,40 @@
     <!-- ============================================================== -->
     <!-- Container fluid  -->
     <!-- ============================================================== -->
+    <script>
+    function del(id) {
+        let swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        });
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.replace("<?php echo base_url('adminpanel/deleteCategory/') ?>"+id);
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        });
+    }
+</script>
     <div class="container-fluid">
         <!-- ============================================================== -->
         <!-- Start Page Content -->
@@ -46,22 +80,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($category as $key => $value) { ?>
+                                       
                                     <tr>
-                                        <td>Tiger</td>
-                                        <td>Nixon</td>
+                                        <td><?php print_r($key+1) ?></td>
+                                        <td><?php print_r($value->name) ?></td>
                                         <td>
-                                            <a href="<?php echo base_url('adminpanel/editPortfolio/1'); ?>"><button class="btn btn-info waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-pencil-alt"></i></span> Edit</button></a>
-                                            <a href="#"><button class="btn btn-danger waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-trash-alt"></i></span> Delete</button></a>
+                                            <a href="<?php echo base_url('adminpanel/editCategory/'.$value->id); ?>"><button class="btn btn-info waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-pencil-alt"></i></span> Edit</button></a>
+                                            <a href="#"><button onclick=del(<?php print_r($value->id) ?>) class="btn btn-danger waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-trash-alt"></i></span> Delete</button></a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Donna</td>
-                                        <td>Snider</td>
-                                        <td>
-                                        <a href="<?php echo base_url('adminpanel/editPortfolio/1'); ?>"><button class="btn btn-info waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-pencil-alt"></i></span> Edit</button></a>
-                                        <a href="#"><button class="btn btn-danger waves-effect waves-light" type="button"><span class="btn-label"><i class="fas fa-trash-alt"></i></span> Delete</button></a>
-                                        </td>
-                                    </tr>
+
+                                    <?php } ?>
+
                                 </tbody>
                             </table>
                         </div>
@@ -70,3 +101,4 @@
             </div>
         </div>
     </div>
+

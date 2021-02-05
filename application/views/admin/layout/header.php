@@ -14,11 +14,21 @@
     <!-- Custom CSS -->
     <link href="<?php echo base_url('assets/admin/'); ?>assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="<?php echo base_url('assets/admin/'); ?>assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-	<link href="<?php echo base_url('assets/admin/'); ?>assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-	<link href="<?php echo base_url('assets/admin/'); ?>assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets/admin/'); ?>assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/admin/'); ?>assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
     <!-- Custom CSS -->
-	<link href="<?php echo base_url('assets/admin/'); ?>dist/css/style.min.css" rel="stylesheet">
-	<link href="<?php echo base_url('assets/admin/'); ?>assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets/admin/'); ?>dist/css/style.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets/admin/'); ?>assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <script src="<?php echo base_url('assets/admin/'); ?>assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="<?php echo base_url('assets/admin/'); ?>assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<?php echo base_url('assets/admin/'); ?>assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="<?php echo base_url('assets/admin/'); ?>dist/js/app.min.js"></script>
+    <script src="<?php echo base_url('assets/admin/'); ?>dist/js/app.init.js"></script>
+    <script src="<?php echo base_url('assets/admin/'); ?>dist/js/app-style-switcher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -83,8 +93,7 @@
                     <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="ti-more"></i>
                     </a>
                 </div>

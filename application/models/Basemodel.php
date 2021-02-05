@@ -125,6 +125,18 @@ class Basemodel extends CI_Model
         }
     }
 
+    public function deleteData($condition)
+    {
+        $this->db->where($condition);
+        $this->db->delete($this->tablename);
+
+        if($this->db->affected_rows()){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
     public function login($column, $data)
 	{
 		$user = $data['username'];

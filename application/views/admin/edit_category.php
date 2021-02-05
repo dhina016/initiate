@@ -14,13 +14,14 @@
                             <li class="breadcrumb-item">
                                 <a href="#">Home</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit <?php print_r($category) ?></li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- ============================================================== -->
     <!-- End Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
@@ -34,11 +35,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form class="needs-validation" novalidate>
+                    <form action="" method="post" class="needs-validation" novalidate>
                         <div class="form-row">
                             <div class="col-12 mb-2">
                                 <label for="validationCustom01">Category</label>
-                                <input type="text" class="form-control" id="validationCustom01" placeholder="Enter category"  required>
+                                <input type="text" name="category" class="form-control" id="validationCustom01" placeholder="Enter category" value="<?php print_r($category->name) ?>" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
